@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "731451279989",
+    "project_id": "linkup-274be",
+    "storage_bucket": "linkup-274be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731451279989:android:54b958188f5ff92d63063c",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMNFcr_52ud_Fv31mm7H_xpBMs_faKU9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
