@@ -1,10 +1,10 @@
 import 'package:chatapp/auth/auth_service.dart';
 import 'package:chatapp/auth/login_or_register.dart';
+import 'package:chatapp/pages/blocked_users_page.dart';
 import 'package:chatapp/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -84,6 +84,35 @@ class SettingsPage extends StatelessWidget {
                   onTap: () {
                     Provider.of<ThemeProvider>(context, listen: false)
                         .toggleTheme();
+                  },
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, right: 8, top: 10),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Material(
+                color: Theme.of(context).colorScheme.tertiary,
+                child: ListTile(
+                  title: Text(
+                    "Blocked Users",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.inversePrimary,
+                      fontSize: 18,
+                    ),
+                  ),
+                  leading: FaIcon(
+                    FontAwesomeIcons.userSlash,
+                    size: 30,
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => BlockedUsersPage(),
+                    ));
                   },
                 ),
               ),

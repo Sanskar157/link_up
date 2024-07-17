@@ -31,6 +31,10 @@ class _ChatPageState extends State<ChatPage> {
         Future.delayed(const Duration(milliseconds: 500), () => scrollDown());
       }
     });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      scrollDown();
+    });
   }
 
   @override
@@ -54,6 +58,8 @@ class _ChatPageState extends State<ChatPage> {
           widget.recieverID, _messageController.text);
       _messageController.clear();
     }
+
+    scrollDown();
   }
 
   @override
@@ -110,6 +116,8 @@ class _ChatPageState extends State<ChatPage> {
               isCurrentUser ? CrossAxisAlignment.end : CrossAxisAlignment.start,
           children: [
             ChatBubble(
+              messageId: doc.id,
+              userId: data["senderID"],
               message: data["message"],
               isCurrentUser: isCurrentUser,
             ),
@@ -127,6 +135,7 @@ class _ChatPageState extends State<ChatPage> {
               controller: _messageController,
               hintText: "Type a message",
               obscureText: false,
+              focusNode: myFocusNode,
             ),
           ),
           Padding(
